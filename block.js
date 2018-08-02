@@ -30,7 +30,12 @@ class Block{
     }
 
     static hash(timestamp, previousHash, data){
-        return SHA256(timestamp,previousHash,data).toString();
+        return SHA256(`${timestamp}${previousHash}${data}`).toString();
+    }
+
+    static blockHash(block){
+        const {timestamp, previousHash, data} = block;
+        return Block.hash(timestamp,previousHash,data);
     }
 }
 

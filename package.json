@@ -8,8 +8,7 @@
     "dev-test": "nodemon dev-test"
   },
   "jest" : {
-  	"testURL" : "http://localhost",
-  	"verbose" : true
+  	"testURL" : "http://localhost"
   },
   "keywords": [],
   "author": "",
