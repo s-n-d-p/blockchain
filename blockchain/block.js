@@ -1,6 +1,6 @@
 const SHA256 = require("crypto-js/sha256");
 
-const DIFFICULTY = 1;
+const { DIFFICULTY } = require('../config');
 
 class Block{
    
