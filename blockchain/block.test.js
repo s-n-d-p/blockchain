@@ -5,8 +5,9 @@ describe('Block', () => {
     let data, previousBlock, block;
     beforeEach(()=>{
         data = 'seems good so far';
-        previousBlock = Block.genesis();
+        previousBlock = Block.mineBlock(Block.genesis(),data);
         block = Block.mineBlock(previousBlock,data);
+        //chain of length 3
     });
 
     it('sets `data` to block data', () => {
@@ -15,7 +16,14 @@ describe('Block', () => {
     it('sets `previousHash` to previous block hash', () => {
         expect(block.previousHash).toEqual(previousBlock.hash);
     });
-    it('generates hash according to DIFFICULTY', () => {
-        expect(block.hash.substring(0,DIFFICULTY)).toEqual('0'.repeat(DIFFICULTY));
+    it('generates hash according to network defined difficulty for the block', () => {
+        expect(block.hash.substring(0,block.difficulty)).toEqual('0'.repeat(block.difficulty));
+    });
+    it('decreases difficulty when blocks are mined at a slow rate', () => {
+        // console.log(block.timestamp);
+        expect(Block.adjustDifficulty(previousBlock,previousBlock.timestamp + 10000)).toEqual(previousBlock.difficulty - 1);
+    });
+    it('increases difficulty when blocks are mined at a fast rate', () => {
+        expect(Block.adjustDifficulty(previousBlock,previousBlock.timestamp + 1)).toEqual(previousBlock.difficulty + 1);
     });
 });
