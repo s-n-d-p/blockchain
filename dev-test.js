@@ -1,9 +1,4 @@
-const Blockchain = require('./blockchain');
+const Wallet = require('./wallet');
+wallet = new Wallet();
 
-bc = new Blockchain(); 
-
-let start_time = new Date();
-for(let i = 0; i < 10; i++){
-    console.log(bc.addBlock(`foo${i}`).toString());
-}
-console.log(`Time taken for 10 blocks: ${new Date() - start_time} ms`);
+console.log(wallet.toString());
