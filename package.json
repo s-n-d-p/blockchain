@@ -10,7 +10,8 @@
     "dev": "nodemon ./app"
   },
   "jest": {
-    "testURL": "http://localhost"
+    "testURL": "http://localhost",
+    "testEnvironment" : "node"
   },
   "keywords": [],
   "author": "",
