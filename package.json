@@ -11,7 +11,7 @@
   },
   "jest": {
     "testURL": "http://localhost",
-    "testEnvironment" : "node"
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
