@@ -13,6 +13,10 @@ class Wallet{
             publicKey:  ${this.publicKey.toString().substring(0,40)}
             balance:    ${this.balance}`;
     }
+    
+    sign(dataHash){
+        return this.keyPair.sign(dataHash);
+    }
 }
 
 module.exports = Wallet;
