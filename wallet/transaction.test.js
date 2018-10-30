@@ -2,7 +2,7 @@ const Wallet = require('./index');
 const Transaction = require('./transaction');
 
 describe('Transaction', () => {
-    let transaction, senderWallet, recipient, amount;
+    let transaction, senderWallet, recipient, amount, nextAmount, nextRecipient;
     beforeEach(()=>{
         senderWallet = new Wallet();
         recipient = 'r3c1p13n7';
@@ -30,14 +30,30 @@ describe('Transaction', () => {
         expect(Transaction.verifyTransaction(transaction)).toBe(false);
     });
 
-    describe('Transaction with an amount that exceeds the balance',()=>{
+    describe('transaction with an amount that exceeds the balance',()=>{
         beforeEach(()=>{
-            amount = 50000;
+            amount = Infinity;
             transaction = Transaction.newTransaction(senderWallet,recipient,amount);
         });
 
         it('does not create the transaction',()=>{
             expect(transaction).toEqual(undefined);
+        });
+    });
+
+    describe('updating a transaction',()=>{
+        beforeEach(()=>{
+            nextAmount = 20;
+            nextRecipient = 'n3x7-r3cipi3n7';
+            transaction.update(senderWallet,nextRecipient,nextAmount);
+        });
+
+        it('senderOutput balance gets updated',()=>{
+            expect(transaction.outputs.find(output => output.address === senderWallet.publicKey).amount).toEqual(senderWallet.balance - amount - nextAmount);
+        });
+
+        it('includes an output for nextRecipient',()=>{
+            expect(transaction.outputs.find(output => output.address === nextRecipient).amount).toEqual(nextAmount);
         });
     });
 });
