@@ -28,5 +28,4 @@ d) To start a blockchain node in production mode on specific ports, use:
 e) To run the tests, use:
 
     npm run test
-    npm run dev-test
 
