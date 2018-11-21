@@ -35,7 +35,7 @@ class Block{
             timestamp = Date.now();
             difficulty = Block.adjustDifficulty(previousBlock,timestamp);
             hash = Block.hash(timestamp,previousHash,data,nonce,difficulty);
-            console.log('nonce: ',nonce);
+            // console.log('nonce being tried: ',nonce);
         } while(hash.substring(0,difficulty) !== '0'.repeat(difficulty));
 
         return new this(timestamp, previousHash, hash, data, nonce,difficulty);
