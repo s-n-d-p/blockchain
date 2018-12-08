@@ -21,7 +21,9 @@ class Miner{
         // clear the local transaction pool
         this.transactionPool.clear();
         // also tell everyone to do the same
-        
+        this.p2pServer.broadcastClearTransactions();
+
+        return block;
     }
 }
 

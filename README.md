@@ -1,7 +1,7 @@
 Multhithreaded - Blockchain
 ===========================
 
-Installation (Linux):
+Installation:
 
 (Prerequisite: Node.js and NPM )
 1) git clone https://github.com/sndp487/multithreaded_blockchain.git
@@ -19,13 +19,12 @@ b) To start a blockchain node in production mode, use:
 
 c) To start a blockchain node in development mode on specific ports, use:
 
-    HTTP_PORT=<HTTP_PORT> P2P_PORT=<P2P_PORT> PEERS=ws://localhost:PEER1_PORT,ws://localhost:PEER2_PORT npm run dev
+    export HTTP_PORT=<HTTP_PORT> 
+    export P2P_PORT=<P2P_PORT> 
+    export PEERS=ws://localhost:PEER1_PORT,ws://localhost:PEER2_PORT 
+    npm run dev
 
-d) To start a blockchain node in production mode on specific ports, use:
-
-    HTTP_PORT=<HTTP_PORT> P2P_PORT=<P2P_PORT> PEERS=ws://localhost:PEER1_PORT,ws://localhost:PEER2_PORT npm run start
-
-e) To run the tests, use:
+d) To run the tests, use:
 
     npm run test
 
