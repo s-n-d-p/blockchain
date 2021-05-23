@@ -1,5 +1,5 @@
-Multhithreaded - Blockchain
-===========================
+Blockchain
+==========
 
 Installation (Linux):
 
