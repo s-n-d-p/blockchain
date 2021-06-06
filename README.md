@@ -1,5 +1,5 @@
-Multhithreaded - Blockchain
-===========================
+D-Coin
+======
 
 Installation:
 
