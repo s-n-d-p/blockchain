@@ -5,7 +5,7 @@ Installation (Linux):
 
 (Prerequisite: Node.js and NPM )
 1) git clone https://github.com/sndp487/multithreaded_blockchain.git
-2) cd multithreaded_blockchain 
+2) cd blockchain 
 3) npm install 
 4) npm install --dev 
 
