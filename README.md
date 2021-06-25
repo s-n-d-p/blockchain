@@ -4,7 +4,7 @@ D-Coin
 Installation:
 
 (Prerequisite: Node.js and NPM )
-1) git clone https://github.com/sndp487/multithreaded_blockchain.git
+1) git clone https://github.com/s-n-d-p/blockchain.git
 2) cd multithreaded_blockchain 
 3) npm install 
 4) npm install --dev 
